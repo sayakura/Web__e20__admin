@@ -1,23 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Navbar />
+    <router-view></router-view>
+    <footer class="text-center">
+        Created by <span>kura peng</span>
+    </footer>
   </div>
 </template>
 
 <script>
+import Admin from '@/components/Admin'
+import Navbar from '@/components/Navbar'
+import firebase from 'firebase'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navbar,
+    Admin
+  },
+  data(){
+    return {
+    }
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
