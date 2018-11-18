@@ -85,7 +85,9 @@
                                 </div>
                         </ul>
                     </li>
-                    <li class="list-group-item">...</li>
+                    <li class="list-group-item">
+                        <OptionConfig />
+                    </li>
                 </ul>
 
             </div>
@@ -95,10 +97,14 @@
 <script>
 import firebase from '@/firebase/init'
 import swal from 'sweetalert';
+import OptionConfig from '@/components/OptionConfig'
 
 const db = firebase.firestore();
 export default {
     name: "Layout",
+    components:{
+        OptionConfig
+    },
     data(){
         return {
             layout: {
