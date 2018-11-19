@@ -8,28 +8,28 @@
                 <input type="text" class="form-control" id="lense_option_label" v-model="lense_option.lense_option_label">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_1_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_1_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option1.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option1.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_2_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_2_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option2.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option2.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_3_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_3_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option3.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option3.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_4_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_4_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option4.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option4.price">
             </li>
              <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_5_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_5_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option5.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option5.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option.option_6_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option.option_6_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option.option6.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option.option6.price">
             </li>
             <li class="mt-2">
                 <h5>Lense Option</h5>
@@ -38,39 +38,39 @@
                 <input type="text" class="form-control" id="lense_option_label" v-model="lense_option2.lense_option_label">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option2.option_1_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option2.option_1_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option2.option1.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option2.option1.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option2.option_2_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option2.option_2_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option2.option2.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option2.option2.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option2.option_4_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option2.option_4_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option2.option3.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option2.option3.price">
             </li>
              <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option2.option_5_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option2.option_5_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option2.option4.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option2.option4.price">
             </li>
               <li class="mt-2">
                 <h5>Lense Coating Option</h5>
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option3.option_1_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option3.option_1_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option3.option1.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option3.option1.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option3.option_2_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option3.option_2_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option3.option2.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option3.option2.price">
             </li>
             <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option3.option_4_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option3.option_4_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option3.option3.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option3.option3.price">
             </li>
              <li class="mt-2 row">
-                <input type="text" class="form-control col-md-10" v-model="lense_option3.option_5_text">
-                <input type="text" class="form-control col-md-2" v-model="lense_option3.option_5_price">
+                <input type="text" class="form-control col-md-10" v-model="lense_option3.option4.text">
+                <input type="text" class="form-control col-md-2" v-model="lense_option3.option4.price">
             </li>
              <li class="mt-2">
                 <button class="btn btn-outline-primary btn-block" @click="saveConfig"><i class="far fa-save pr-1"></i>Save</button>
@@ -91,39 +91,67 @@ export default {
         return {
             lense_option: {
                 lense_option_label: "The 1.59 polycarbcnate lense high impact resistant",
-                option_1_text: "Anti-glare(reduce glare)",
-                option_1_price: 60,
-                option_2_text: "Transition(In and outdoor change color ) Grey ",
-                option_2_price: 60,
-                option_3_text: "Transition(In and outdoor change color ) Black ",
-                option_3_price: 60,
-                option_4_text: "Polarized (Sun lenses reduce glare) Grey ",
-                option_4_price: 60,
-                option_5_text: "Polarized (Sun lenses reduce glare) Black ",
-                option_5_price: 60,
-                option_6_text: "TinT (Included UV protection Does not reduce glare)",
-                option_6_price: 30,
+                option1: {
+                    text: "Anti-glare(reduce glare)",
+                    price: 60,
+                },
+                option2: {
+                    text: "Transition(In and outdoor change color ) Grey ",
+                    price: 60,
+                },
+                option3: {
+                    text: "Transition(In and outdoor change color ) Black ",
+                    price: 60,
+                },
+                option4: {
+                    text: "Polarized (Sun lenses reduce glare) Grey ",
+                    price: 60,
+                },
+                option5: {
+                    text: "Polarized (Sun lenses reduce glare) Black ",
+                    price: 60,
+                },
+                option6: {
+                    text: "TinT (Included UV protection Does not reduce glare)",
+                    price: 30,
+                }
             },
             lense_option2: {
                 lense_option_label: "The 1.67 Hi-index provides a thinner lenses for high prescription. It reduces thickness on the edge. (Recommended for spherical power of +/- 6.00 abd above)",
-                option_1_text: "Anti-glare(reduce glare)",
-                option_1_price: 60,
-                option_2_text: "Transition(In and outdoor change color ) Grey ",
-                option_2_price: 60,
-                option_4_text: "Polarized (Sun lenses reduce glare) Grey ",
-                option_4_price: 60,
-                option_5_text: "Polarized (Sun lenses reduce glare) Black ",
-                option_5_price: 60,
+                option1: {
+                    text: "Anti-glare(reduce glare)",
+                    price: 60,
+                },
+                option2: {
+                    text: "Transition(In and outdoor change color ) Grey ",
+                    price: 60,
+                },
+                option3: {
+                    text: "Polarized (Sun lenses reduce glare) Grey ",
+                    price: 60,
+                },
+                option4: {
+                    text: "Polarized (Sun lenses reduce glare) Black ",
+                    price: 60,
+                }
             },
             lense_option3: {
-                option_1_text: "Anti-glare(reduce glare)",
-                option_1_price: 30,
-                option_2_text: "Transition(In and outdoor change color )",
-                option_2_price: 40,
-                option_4_text: "Polarized (Sun lenses reduce glare)",
-                option_4_price: 50,
-                option_5_text: "TinT (Included UV protection Does not reduce glare)",
-                option_5_price: 30,
+                option1: {
+                    text: "Anti-glare(reduce glare)",
+                    price: 30,
+                },
+                option2: {
+                    text:  "Transition(In and outdoor change color )",
+                    price: 40,
+                },
+                option3: {
+                    text: "Polarized (Sun lenses reduce glare)",
+                    price: 50,
+                },
+                option4: {
+                    text: "TinT (Included UV protection Does not reduce glare)",
+                    price:30,
+                }
             }
         }
     },
@@ -141,6 +169,11 @@ export default {
     },
     created(){
         var self = this;
+         var obj = {
+                lense_option1: this.lense_option,
+                lense_option2: this.lense_option2,
+                lense_option3: this.lense_option3,
+        }
         db.collection('options').get().then((snapshot) => {
             snapshot.forEach((doc) => {
                 if (doc.id == 'lense_options'){
@@ -155,7 +188,8 @@ export default {
                     bus.$emit('options_loaded', obj);
                 }
             })
-        })
+        })   
+     
     }
 }
 </script>

@@ -122,10 +122,22 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-check mt-3">
+                            <div class="form-check mt-3" v-for="(option, index) in lense_option1" :key="index +  Math.random()">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"  v-if="index != 0">
+                                <label class="form-check-label" for="defaultCheck1"  v-if="index != 0">
+                                    {{ option.text + ' ' + option.price }}
+                                </label>
+                            </div>
+                             <div class="form-check mt-3" v-for="(option, index) in lense_option2" :key="index + Math.random()" >
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"  v-if="index != 0">
+                                <label class="form-check-label" for="defaultCheck1"  v-if="index != 0">
+                                    {{ option.text + ' ' + option.price  }}
+                                </label>
+                            </div>
+                             <div class="form-check mt-3" v-for="(option, index) in lense_option3" :key="index + Math.random()">
                                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Default checkbox
+                                    {{ option.text + ' ' + option.price }}
                                 </label>
                             </div>
                             <div class="animated flipInX mt-3" id='control-group'>
@@ -213,6 +225,10 @@ export default {
             product_price: null,
             product_photos:{},
             upload_status:[],
+            lense_options:{},
+            lense_option1:{},
+            lense_option2:{},
+            lense_option3:{},
             editMode: false,
         }
     },
@@ -376,7 +392,6 @@ export default {
                     });
                 }
             });
-          
        },
        deleteThisImg: function(e){
             swal({
@@ -393,6 +408,9 @@ export default {
                 }
             });
            
+       },
+       isLabel(string){
+           return string.indexOf('label');
        }
     },
     created(){
@@ -405,7 +423,10 @@ export default {
              });
          });
         bus.$on('options_loaded', function(obj) {
-            console.log(JSON.stringify(obj))
+            self.lense_option1 = obj['lense_option1'];
+            self.lense_option2 = obj['lense_option2'];
+            self.lense_option3 = obj['lense_option3'];
+            console.log( self.lense_option1 );
         });
     },
 }
@@ -453,4 +474,8 @@ td:hover{
     padding-top: 20px;
     border: solid 1px rgb(221, 224, 228);
 }
+.tab-content{
+    overflow-x: scroll;
+}
 </style>
+
