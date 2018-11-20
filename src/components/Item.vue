@@ -22,14 +22,13 @@
                         <tbody>
                             <template  v-for="key in product_data">
                             <tr :key="key.id">
-                                    <th scope="row" class="th-edit" ><i class="far fa-edit icon-edit" :id="key.id" @click.prevent="copy($event)"></i></th>
-                                    <td><strong>{{ key.product_name }}</strong></td>
-                                    <td class="text-over-overflow">{{ key.product_description }}</td>
-                                    <td>{{ key.product_category }}</td>
-                                    <td class="text-over-overflow" style="max-width: 50px">{{ arrToStr(key.product_colors) }}</td>
-                                    <td class="text-over-overflow" style="max-width: 50px">{{ key.product_stock }}</td>
-                                    <td class="text-over-overflow" style="max-width: 50px">{{ '$' + key.product_price  }}</td>
-
+                                <th scope="row" class="th-edit" ><i class="far fa-edit icon-edit" :id="key.id" @click.prevent="copy($event)"></i></th>
+                                <td><strong>{{ key.product_name }}</strong></td>
+                                <td class="text-over-overflow">{{ key.product_description }}</td>
+                                <td>{{ key.product_category }}</td>
+                                <td class="text-over-overflow" style="max-width: 50px">{{ arrToStr(key.product_colors) }}</td>
+                                <td class="text-over-overflow" style="max-width: 50px">{{ key.product_stock }}</td>
+                                <td class="text-over-overflow" style="max-width: 50px">{{ '$' + key.product_price  }}</td>
                             </tr>
                             </template>   
                         </tbody>
@@ -122,22 +121,28 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-check mt-3" v-for="(option, index) in lense_option1" :key="index +  Math.random()">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"  v-if="index != 0">
-                                <label class="form-check-label" for="defaultCheck1"  v-if="index != 0">
-                                    {{ option.text + ' ' + option.price }}
+                            <h5 class="mt-2">Lense Option</h5>
+                            <div class="form-check mt-1" v-for="(option, index) in lense_option1" :key="index +  Math.random()">
+                                <i class="far fa-check-square icon-action pr-1" :id="'lense_option1' + index" @click="select_option(index, option, 1)" v-if="(index.indexOf('label') < 0) && s_option_data['lense_option1'][index]"></i>
+                                <i class="far fa-square icon-action pr-1" :id="'lense_option1' + index" @click="select_option(index, option, 1)"  v-else-if="(index.indexOf('label') < 0)"></i>
+                                <label class="form-check-label" for="defaultCheck1"  v-if="index.indexOf('label') < 0">
+                                    {{ option.text + ' $' + option.price }}
                                 </label>
                             </div>
-                             <div class="form-check mt-3" v-for="(option, index) in lense_option2" :key="index + Math.random()" >
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"  v-if="index != 0">
-                                <label class="form-check-label" for="defaultCheck1"  v-if="index != 0">
-                                    {{ option.text + ' ' + option.price  }}
+                            <h5>Lense Option</h5>
+                             <div class="form-check mt-1" v-for="(option, index) in lense_option2" :key="index + Math.random()" >
+                               <i class="far fa-check-square icon-action pr-1" :id="'lense_option2' + index" @click="select_option(index, option, 2)" v-if="(index.indexOf('label') < 0) && s_option_data['lense_option2'][index]"></i>
+                                <i class="far fa-square icon-action pr-1" :id="'lense_option2' + index" @click="select_option(index, option, 2)"  v-else-if="(index.indexOf('label') < 0)"></i>
+                               <label class="form-check-label" for="defaultCheck1"  v-if="index.indexOf('label') < 0">
+                                    {{ option.text + ' $' + option.price  }}
                                 </label>
                             </div>
-                             <div class="form-check mt-3" v-for="(option, index) in lense_option3" :key="index + Math.random()">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                <label class="form-check-label" for="defaultCheck1">
-                                    {{ option.text + ' ' + option.price }}
+                            <h5>Lense Coating Option</h5>
+                             <div class="form-check mt-1" v-for="(option, index) in lense_option3" :key="index + Math.random()">
+                               <i class="far fa-check-square icon-action pr-1" :id="'lense_option3' + index" @click="select_option(index, option, 3)" v-if="(index.indexOf('label') < 0) && s_option_data['lense_option3'][index]"></i>
+                                <i class="far fa-square icon-action pr-1" :id="'lense_option3' + index" @click="select_option(index, option, 3)"  v-else-if="(index.indexOf('label') < 0)"></i>
+                               <label class="form-check-label" for="defaultCheck1">
+                                    {{ option.text + ' $' + option.price }}
                                 </label>
                             </div>
                             <div class="animated flipInX mt-3" id='control-group'>
@@ -225,10 +230,34 @@ export default {
             product_price: null,
             product_photos:{},
             upload_status:[],
-            lense_options:{},
             lense_option1:{},
             lense_option2:{},
             lense_option3:{},
+            s_option_data:{
+                lense_option1: {
+                    option1: true,
+                    option2: true,
+                    option3: true,
+                    option4: true,
+                    option5: true,
+                    option6: true,
+                },lense_option2: {
+                    option1: true,
+                    option2: true,
+                    option3: true,
+                    option4: true,
+                },lense_option3: {
+                    option1: true,
+                    option2: true,
+                    option3: true,
+                    option4: true,
+                }
+            },
+            selected_options: {
+                lense_option1: null,
+                lense_option2: null,
+                lense_option3: null
+            },
             editMode: false,
         }
     },
@@ -236,6 +265,21 @@ export default {
         post_item:function(){
             var self = this;
             var obj = {};
+            var selected = false;
+            for (var i in this.selected_options)
+                for (var y in this.selected_options[i])
+                    if (y.indexOf('label') >= 0)
+                        continue;
+                    else
+                        selected = true;
+
+            console.log(selected)
+            if (!selected){
+                swal("Failed!", "You need to choose at least one lense option!", "error");
+                return ;
+            }
+            else
+                obj['options'] = this.selected_options;
             obj["product_name"] = this.product_name;
             obj["product_description"] = this.product_description;
             obj["product_category"] = this.product_category;
@@ -352,7 +396,8 @@ export default {
                    self.checked_colors = temp.product_colors;
                    self.product_photos = temp.product_photos;
                    self.product_stock = temp.product_stock;
-                   self.product_price = temp.product_stock;
+                   self.product_price = temp.product_price;
+                   self.selected_options = Object.assign({}, temp.options);
                    var string = "";
                    var first = true;
                    for (var key in temp.product_photos){
@@ -362,6 +407,33 @@ export default {
                        string += temp.product_photos[key].name;
                    }
                     $("#label-img").text(string)
+                    self.s_option_data = {
+                        lense_option1: {
+                            option1: false,
+                            option2: false,
+                            option3: false,
+                            option4: false,
+                            option5: false,
+                            option6: false,
+                        },lense_option2: {
+                            option1: false,
+                            option2: false,
+                            option3: false,
+                            option4: false,
+                        },lense_option3: {
+                            option1: false,
+                            option2: false,
+                            option3: false,
+                            option4: false,
+                        }
+                    };
+                    for (var i in self.selected_options){
+                        for (var j in self.selected_options[i]){
+                            if (j.indexOf('label') < 0){
+                                self.s_option_data[i][j] = true;
+                            }
+                        }
+                    }
                }
            });
            this.editMode = true;
@@ -382,8 +454,7 @@ export default {
                 icon: "warning",
                 buttons: true,
                 dangerMode: true,
-            })
-            .then((willDelete) => {
+            }).then((willDelete) => {
                 if (willDelete) {
                     db.collection('item').doc(this.product_id).delete().then(()=>{
                         swal("Success!", "This item has been deleted!", "success").then(()=>{
@@ -407,10 +478,41 @@ export default {
                     this.upload_status.pop();
                 }
             });
-           
        },
        isLabel(string){
            return string.indexOf('label');
+       },
+       select_option(index, option, flag){
+           
+           switch(flag){
+               case 1: 
+                if (this.selected_options["lense_option1"][index]){
+                    this.s_option_data["lense_option1"][index] = !this.s_option_data["lense_option1"][index];
+                    delete this.selected_options["lense_option1"][index];
+                }else{
+                    this.s_option_data["lense_option1"][index] = !this.s_option_data["lense_option1"][index];
+                    this.selected_options["lense_option1"][index] = option;
+                }
+                break ;
+               case 2: 
+                if (this.selected_options["lense_option2"][index]){
+                    this.s_option_data["lense_option2"][index] = !this.s_option_data["lense_option2"][index];
+                    delete this.selected_options["lense_option2"][index];
+                }else{
+                    this.s_option_data["lense_option2"][index] = !this.s_option_data["lense_option2"][index];
+                    this.selected_options["lense_option2"][index] = option;
+                }
+                break ;
+               case 3:
+                if (this.selected_options["lense_option3"][index]){
+                    this.s_option_data["lense_option3"][index] = !this.s_option_data["lense_option3"][index];
+                    delete this.selected_options["lense_option3"][index];
+                }else{
+                    this.s_option_data["lense_option3"][index] = !this.s_option_data["lense_option3"][index];
+                    this.selected_options["lense_option3"][index] = option;
+                }
+                break ;
+           }
        }
     },
     created(){
@@ -426,7 +528,10 @@ export default {
             self.lense_option1 = obj['lense_option1'];
             self.lense_option2 = obj['lense_option2'];
             self.lense_option3 = obj['lense_option3'];
-            console.log( self.lense_option1 );
+
+            self.selected_options.lense_option1 = Object.assign({}, obj['lense_option1']);
+            self.selected_options.lense_option2 = Object.assign({}, obj['lense_option2']);
+            self.selected_options.lense_option3 = Object.assign({}, obj['lense_option3']);
         });
     },
 }
@@ -476,6 +581,9 @@ td:hover{
 }
 .tab-content{
     overflow-x: scroll;
+}
+.icon-action{
+    cursor: pointer;
 }
 </style>
 
