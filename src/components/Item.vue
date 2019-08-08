@@ -103,7 +103,7 @@
                                         <option disabled value="">Please select one</option>
                                         <option>Men</option>
                                         <option>Women</option>
-                                        <option>Kid</option>
+                                        <option>Best Seller</option>
                                     </select>
                                 </div>
                             </div>
@@ -146,14 +146,16 @@
                                 </label>
                             </div>
                             <div class="animated flipInX mt-3" id='control-group'>
-                                <input type="checkbox" value="Gery" v-model="checked_colors">
-                                <label for="jack">Grey</label>
+                                <input type="checkbox" value="Grey" v-model="checked_colors">
+                                <label>Grey</label>
+                                <input type="checkbox" value="Green" v-model="checked_colors">
+                                <label>Green</label>
                                 <input type="checkbox" value="Brown" v-model="checked_colors">
-                                <label for="john">Brown</label>
+                                <label>Brown</label>
                                 <input type="checkbox" value="Blue" v-model="checked_colors">
-                                <label >Blue</label>
-                                <input type="checkbox" value="Other" v-model="checked_colors">
-                                <label for="mike">Other</label>
+                                <label>Blue</label>
+                                <input type="checkbox" value="Pink" v-model="checked_colors">
+                                <label>Pink</label>
                                 <br>
                                 <div v-if="checked_colors.length">
                                     Colors Seletcted: 

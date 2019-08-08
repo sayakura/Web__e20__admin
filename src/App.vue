@@ -6,24 +6,16 @@
     <div class="row ml-3 mt-3">
         <p class="p-tab"> 
          <i class="fas fa-home"></i>
-          <span id="item_tab" class="activeTab" @click="changeTab($event)">Item List</span> /
-          <span id="transaction_tab" @click="changeTab($event)">Transcation List<span class="badge badge-pill  badge-danger ml-2">1
-              
-          </span>
+          <span id="item_tab" class="activeTab" @click="changeTab($event)">Item</span> /
+            <span id="transaction_tab" @click="changeTab($event)">Transcation<span class="badge badge-pill  badge-danger ml-2">1</span>
           </span>
         </p>
     </div>
     <!-- router view here -->
 
     <router-view></router-view>
-
-    <!-- mail component here -->
-    <Mail class="container mt-3"/>
-
     <!-- footer component (todo) -->
-    <footer class="text-center">
-        Created by <span>kura peng</span>
-    </footer>
+    <Footer />
   </div>
 </template>
 
@@ -32,14 +24,14 @@ import Admin from '@/components/Admin'
 import Navbar from '@/components/Navbar'
 import firebase from 'firebase'
 import Item from '@/components/Item'
-import Mail from '@/components/Mail'
+import Footer from '@/components/Footer'
 export default {
   name: 'App',
   components: {
     Navbar,
     Admin,
     Item,
-    Mail,
+    Footer
     },
     data(){
         return {
